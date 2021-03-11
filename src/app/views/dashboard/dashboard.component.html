@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div class="body" style="margin-top: 1rem; height: auto;">
+    <!-- <app-slider title="Trending" [movies]="trending" [sliderConfig]="sliderConfig"></app-slider> -->
+    <!-- <app-slider title="Top Rated" [movies]="topRated" [sliderConfig]="sliderConfig"></app-slider> -->
+    <!-- <app-slider title="Now Playing" [movies]="nowPlaying" [sliderConfig]="sliderConfig"></app-slider> -->
+    <!-- <app-slider title="Originals" [movies]="originals" [sliderConfig]="sliderConfig"></app-slider> -->
+    <app-slider *ngIf="recent" title="Peliculas en Estreno" [movies]="recent" [sliderConfig]="sliderConfig"></app-slider>
+</div>
+
+<div class="body" style="margin-top: 1rem; height: auto;">
+    <app-popular [movies]="popular" title="Peliculas mas populares"></app-popular>
+</div>
+<app-footer></app-footer>

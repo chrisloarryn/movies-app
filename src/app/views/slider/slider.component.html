@@ -1,0 +1,17 @@
+<div class="wrapper__80">
+  <h2>{{title}}</h2>
+</div>
+
+<div class="movie">
+  <div class="movie__images">
+    <div class="thumbnails">
+      <ngx-slick-carousel *ngIf="movies.data" #slickModal="slick-carousel" [config]="sliderConfig" class="carousel">
+        <div class="slick-item" *ngFor="let m of movies.data" ngxSlickItem (click)="seeMovieDetails(m)">
+          <img src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m?.title}}">
+        </div>
+        <button style="position: absolute; width: 3%;" (click)="slickModal.slickGoTo(3)">slickGoto 2</button>
+        <button style="position: absolute; width: 3%;" (click)="slickModal.slickGoTo(1)">unslick</button>
+      </ngx-slick-carousel>  
+    </div>
+  </div>
+</div>

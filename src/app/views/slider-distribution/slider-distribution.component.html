@@ -1,0 +1,15 @@
+<div class="wrapper__80">
+  <h2>{{title}}</h2>
+</div>
+
+<div class="movie" *ngIf="movies">
+  <div class="movie__images">
+    <div class="thumbnails">
+      <ngx-slick-carousel #slickModal="slick-carousel" [config]="sliderConfig" class="carousel">
+        <div class="slick-item" *ngFor="let m of movies?.data" ngxSlickItem>
+          <img *ngIf="m.profile_path" src={{api.getImageUrl(m?.profile_path)}} alt="{{m.name}}">
+        </div>
+      </ngx-slick-carousel>  
+    </div>
+  </div>
+</div>

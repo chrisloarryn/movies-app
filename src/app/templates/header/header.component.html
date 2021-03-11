@@ -1,0 +1,11 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <img src="./../../../assets/agile.png" style="width: 10%; height: 10%;" />
+  <div class="nav__user__details">
+    <div data-initials="AB"></div>
+    <a class="navbar-brand" href="#">
+      Hola, <strong>{{me?.firstName}} {{me?.lastName}}</strong>
+    </a>
+    <button type="button" class="btn btn-danger" (click)="logout()">Salir</button>
+  </div>
+</nav>

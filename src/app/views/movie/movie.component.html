@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="wrapper">
+  <h2>{{title}} ({{movie.release_date | date: 'yyyy'}})</h2>
+</div>
+
+<div class="body" style="margin-top: -41rem; margin-bottom: -50rem; height: auto;">
+  <div class="wrapper clip">
+    <img src="{{movie.imageBaseUrl}}/{{movie.poster_path}}" class="card-img-top" alt="movie.title">
+  </div>
+</div>
+
+<div class="wrapper__center__100">
+  <div class="card mb-3" style="max-width: 80%;width: 80%;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{movie.imageBaseUrl}}/{{movie.backdrop_path}}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body" style="justify-content: space-between;">
+          <h5 class="card-title" style="margin-bottom: revert;">{{movie.title}} (promedio: {{movie.vote_average}}) </h5>
+          <p class="card-text">{{movie.overview}}</p>
+          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="wrapper"> -->
+  <!-- <h2>Reparto</h2> -->
+<!-- </div> -->
+
+<div class="wrapper__center__80" *ngIf="people">
+  <app-slider-distribution *ngIf="people" title="Reparto" [movies]="people" [sliderConfig]="sliderConfig"></app-slider-distribution>
+</div>
